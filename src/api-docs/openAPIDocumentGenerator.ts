@@ -5,6 +5,7 @@ import { powerpointGeneratorRegistry } from '@/routes/powerpointGenerator/powerp
 import { articleReaderRegistry } from '@/routes/webPageReader/webPageReaderRouter';
 import { wordGeneratorRegistry } from '@/routes/wordGenerator/wordGeneratorRouter';
 import { youtubeTranscriptRegistry } from '@/routes/youtubeTranscript/youtubeTranscriptRouter';
+import { proxyServerRegistry } from '@/routes/proxyServer/proxyServerRouter';
 
 export function generateOpenAPIDocument() {
   const registry = new OpenAPIRegistry([
@@ -13,6 +14,7 @@ export function generateOpenAPIDocument() {
     articleReaderRegistry,
     powerpointGeneratorRegistry,
     wordGeneratorRegistry,
+    proxyServerRegistry,
   ]);
   const generator = new OpenApiGeneratorV3(registry.definitions);
 

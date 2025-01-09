@@ -11,9 +11,11 @@ import requestLogger from '@/common/middleware/requestLogger';
 import { healthCheckRouter } from '@/routes/healthCheck/healthCheckRouter';
 
 import { powerpointGeneratorRouter } from './routes/powerpointGenerator/powerpointGeneratorRouter';
+import { proxyServerRouter } from './routes/proxyServer/proxyServerRouter';
 import { webPageReaderRouter } from './routes/webPageReader/webPageReaderRouter';
 import { wordGeneratorRouter } from './routes/wordGenerator/wordGeneratorRouter';
 import { youtubeTranscriptRouter } from './routes/youtubeTranscript/youtubeTranscriptRouter';
+
 const logger = pino({ name: 'server start' });
 const app: Express = express();
 
@@ -40,6 +42,7 @@ app.use('/youtube-transcript', youtubeTranscriptRouter);
 app.use('/web-page-reader', webPageReaderRouter);
 app.use('/powerpoint-generator', powerpointGeneratorRouter);
 app.use('/word-generator', wordGeneratorRouter);
+app.use('/proxy-server', proxyServerRouter);
 // Swagger UI
 app.use(openAPIRouter);
 
